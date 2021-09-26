@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using DotnetFiveBlog.Enums;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -28,6 +29,8 @@ namespace DotnetFiveBlog.Models
 		[StringLength(500, ErrorMessage = "The {0} mus be at least {2} and no more than {1} characters.", MinimumLength = 2)]
 		[Display(Name = "Moderated Comment")]
 		public string ModeratedBody { get; set; }
+
+		public ModerationType ModerationType { get; set; }
 
 		public virtual Post Post { get; set; }
 		public virtual IdentityUser Author { get; set; }
